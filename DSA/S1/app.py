@@ -21,12 +21,16 @@ app.config.suppress_callback_exceptions = True
 
 # Load data from csv
 def load_data():
-    return pd.load.csv('datos_energia.csv')
+    df=pd.read_csv('DSA\S1\datos_energia.csv')
+    df['time']=pd.to_datetime(df['time'])
+    df.set_index('time', inplace=True)
+    return df
     # To do: Completar la función 
     
 
 # Cargar datos
 data = load_data()
+
 
 # Graficar serie
 def plot_series(data, initial_date, proy):
