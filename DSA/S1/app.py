@@ -21,6 +21,7 @@ app.config.suppress_callback_exceptions = True
 
 # Load data from csv
 def load_data():
+    return pd.load.csv('datos_energia.csv')
     # To do: Completar la función 
     
 
@@ -171,7 +172,6 @@ def generate_control_card():
                     )
                 ]
             )     
-     
         ]
     )
 
@@ -197,8 +197,6 @@ app.layout = html.Div(
             id="right-column",
             className="eight columns",
             children=[
-
-
                 # Grafica de la serie de tiempo
                 html.Div(
                     id="model_graph",
@@ -210,8 +208,6 @@ app.layout = html.Div(
                         )
                     ],
                 ),
-
-            
             ],
         ),
     ],
