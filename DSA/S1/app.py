@@ -1,6 +1,5 @@
 import dash
-from dash import dcc
-from dash import html
+from dash import dcc,Dash,html
 from dash.dependencies import Input, Output
 import plotly.graph_objs as go
 import numpy as np
@@ -9,7 +8,7 @@ import datetime as dt
 
 
 
-app = dash.Dash(
+app = Dash(
     __name__,
     meta_tags=[{"name": "viewport", "content": "width=device-width, initial-scale=1"}],
 )
